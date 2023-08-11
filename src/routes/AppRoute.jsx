@@ -4,6 +4,7 @@ import Login from '../screens/login/Login'
 import Register from '../screens/register/Register'
 import PostView from '../components/post/PostView'
 import Home from '../screens/home/Home'
+import Navbar from '../components/nav/Navbar'
 
 const AppRoute = () => {
     return (
@@ -11,7 +12,7 @@ const AppRoute = () => {
             <Routes>
                 <Route path='/login' element={<Login />} />
                 <Route path='/register' element={<Register />} />
-                <Route path='/test' element={<PostView />} />
+                <Route path='/test' element={<Navbar />} />
                 <Route path='/home' element={<Home />} />
             </Routes>
         </>
