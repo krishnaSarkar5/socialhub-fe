@@ -1,5 +1,5 @@
 import React from 'react'
-import { Stack, HStack, VStack, Box, Text, Image, Flex, Center, Button, Grid, GridItem } from '@chakra-ui/react'
+import { Stack, HStack, VStack, Box, Text, Image, Flex, Center, Button, useColorModeValue, Grid, GridItem } from '@chakra-ui/react'
 import { Card, CardHeader, CardBody, CardFooter, StackDivider, Heading } from '@chakra-ui/react'
 import PostHeader from './PostHeader'
 
@@ -16,7 +16,7 @@ const PostBodyComment = () => {
                         alt='Dan Abramov'
                     />
                 </Box>
-                <Flex ml="1%" direction={"column"} backgroundColor="gray.100" borderRadius={"20px"} paddingLeft={"10px"} paddingRight={"30px"} paddingTop={"10px"}>
+                <Flex ml="1%" direction={"column"} bg={useColorModeValue('gray.100', 'gray.800')} borderRadius={"20px"} paddingLeft={"10px"} paddingRight={"30px"} paddingTop={"10px"}>
                     <Box height={"100%"} justifyContent={"start"} >
 
                         <Heading fontSize="15px" >Krishna Sarkar</Heading>
