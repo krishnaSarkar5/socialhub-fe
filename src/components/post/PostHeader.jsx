@@ -1,10 +1,11 @@
 import React from 'react'
 import { Stack, HStack, VStack, Box, Text,Image, Flex,Heading } from '@chakra-ui/react'
+import Avtar from '../avtar/Avtar'
 
 const PostHeader = () => {
     return (
         <HStack>
-            <Box >
+            {/* <Box >
                 <Image
                 borderRadius="50px"
                     boxSize='50px'
@@ -12,7 +13,8 @@ const PostHeader = () => {
                     src='https://bit.ly/dan-abramov'
                     alt='Dan Abramov'
                 />
-            </Box>
+            </Box> */}
+            <Avtar/>
             <VStack>
                 <Box height={"100%"}>
                 <Heading size='md'>Krishna Sarkar</Heading>

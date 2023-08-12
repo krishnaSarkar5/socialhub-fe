@@ -10,7 +10,7 @@ import PostBodyImageLikeComment from './PostBodyImageLikeCommentInfo'
 const PostView = () => {
     return (
         <>
-            <Card w="50%" mt={"5%"} ml={"20%"}>
+            <Card w="50%" mt={"2%"} ml={"20%"}>
                 <CardHeader>
                     <PostHeader />
 
