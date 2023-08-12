@@ -1,59 +1,60 @@
 'use client'
 
 import {
-    Box,
-    Flex,
-    Avatar,
-    Text,
-    Button,
-    Menu,
-    MenuButton,
-    MenuList,
-    MenuItem,
-    MenuDivider,
-    useDisclosure,
-    useColorModeValue,
-    Stack,
-    useColorMode,
-    Center,
-    Input,
-    Spacer
+  Box,
+  Flex,
+  Avatar,
+  Text,
+  Button,
+  Menu,
+  MenuButton,
+  MenuList,
+  MenuItem,
+  MenuDivider,
+  useDisclosure,
+  useColorModeValue,
+  Stack,
+  useColorMode,
+  Center,
+  Input,
+  Spacer
 } from '@chakra-ui/react'
-import { MoonIcon, SunIcon, SearchIcon,EmailIcon,BellIcon} from '@chakra-ui/icons'
+import { MoonIcon, SunIcon, SearchIcon, EmailIcon, BellIcon } from '@chakra-ui/icons'
 import logo from '../../assets/logo.png'
 import profilepic from '../../assets/profilepic.jpg'
+import Badge from './Badge'
 
 interface Props {
-    children: React.ReactNode
+  children: React.ReactNode
 }
 
 const NavLink = (props: Props) => {
-    const { children } = props
+  const { children } = props
 
-    return (
-        <Box
-            as="a"
-            px={2}
-            py={1}
-            rounded={'md'}
-            _hover={{
-                textDecoration: 'none',
-                bg: useColorModeValue('gray.200', 'gray.700'),
-            }}
-            href={'#'}>
-            {children}
-        </Box>
-    )
+  return (
+    <Box
+      as="a"
+      px={2}
+      py={1}
+      rounded={'md'}
+      _hover={{
+        textDecoration: 'none',
+        bg: useColorModeValue('gray.200', 'gray.700'),
+      }}
+      href={'#'}>
+      {children}
+    </Box>
+  )
 }
 
 export default function Navbar() {
-    const { colorMode, toggleColorMode } = useColorMode()
-    const { isOpen, onOpen, onClose } = useDisclosure()
-    return (
-        <>
-            <Box bg={useColorModeValue('gray.100', 'gray.900')} px={4} pos="fixed" w="100%" zIndex={2} top="0" left="0">
-                <Flex h={16} alignItems={'center'} justifyContent={'space-between'}>
-                    {/* <Box>Logo</Box>
+  const { colorMode, toggleColorMode } = useColorMode()
+  const { isOpen, onOpen, onClose } = useDisclosure()
+  return (
+    <>
+      <Box bg={useColorModeValue('gray.100', 'gray.900')} px={4} pos="fixed" w="100%" zIndex={2} top="0" left="0">
+        <Flex h={16} alignItems={'center'} justifyContent={'space-between'}>
+          {/* <Box>Logo</Box>
 
           <Flex alignItems={'center'}>
             <Stack direction={'row'} spacing={7}>
@@ -94,37 +95,64 @@ export default function Navbar() {
               </Menu>
             </Stack>
           </Flex> */}
-                    <Flex justifyContent={'flex-start'}>
-                        <Box pt={"1%"}>
-                            <Avatar name='Ryan Florence' size='sm' src={logo} />
-                        </Box>
-                        <Flex ml="5%">
-                            <Box bg={useColorModeValue('white', '#3B3B3B')} pt="3%" pl="10%" color={"#6A6A6A"} borderRadius={"50px 0 0 50px"}><SearchIcon /></Box>
-                            <Input variant='Unstyled' placeholder='Search SocialHub' borderRadius={"0 50px 50px 0"} />
-                        </Flex>
-
-                    </Flex>
-
-                    <Flex >
-                        <Button size='md' onClick={toggleColorMode} mr={"8%"} rounded={"50%"}  bg={useColorModeValue('gray.200', '#3B3B3B')}>
-                            {colorMode === 'light' ? <MoonIcon fontSize={"20px"} /> : <SunIcon fontSize={"20px"} />}
-                        </Button>
-                        <Button pt={"1%"} mr={"8%"}  rounded={"50%"}  bg={useColorModeValue('gray.200', '#3B3B3B')}>
-                           
-                            <EmailIcon fontSize={"20px"}/>
-                        </Button>
-
-                        <Button pt={"1%"} mr={"8%"}  rounded={"50%"}  bg={useColorModeValue('gray.200', '#3B3B3B')}>
-                           
-                            <BellIcon fontSize={"20px"}/>
-                        </Button>
-
-                        <Button pt={"1%"} mr={"8%"} rounded={"50%"}  bg={useColorModeValue('gray.200', '#3B3B3B')}>
-                            <Avatar  name='Ryan Florence' size='sm' src={profilepic} />
-                        </Button>
-                    </Flex>
-                </Flex>
+          <Flex justifyContent={'flex-start'}>
+            <Box pt={"1%"}>
+              <Avatar name='Ryan Florence' size='sm' src={logo} />
             </Box>
-        </>
-    )
+            <Flex ml="5%">
+              <Box bg={useColorModeValue('white', '#3B3B3B')} pt="3%" pl="10%" color={"#6A6A6A"} borderRadius={"50px 0 0 50px"}><SearchIcon /></Box>
+              <Input variant='Unstyled' placeholder='Search SocialHub' borderRadius={"0 50px 50px 0"} />
+            </Flex>
+
+          </Flex>
+
+          <Flex >
+            <Button size='md' onClick={toggleColorMode} mr={"8%"} rounded={"50%"} bg={useColorModeValue('gray.200', '#3B3B3B')}>
+              {colorMode === 'light' ? <MoonIcon fontSize={"20px"} /> : <SunIcon fontSize={"20px"} />}
+            </Button>
+            <Button pt={"1%"} mr={"8%"} rounded={"50%"} bg={useColorModeValue('gray.200', '#3B3B3B')}>
+
+              <EmailIcon fontSize={"20px"} />
+              <Badge count={2}/>
+            </Button>
+
+            <Button pt={"1%"} mr={"8%"} rounded={"50%"} bg={useColorModeValue('gray.200', '#3B3B3B')}>
+
+              <BellIcon fontSize={"20px"} />
+              <Badge count={1}/>
+            </Button>
+
+
+            <Button pt={"1%"} mr={"8%"} rounded={"50%"} bg={useColorModeValue('gray.200', '#3B3B3B')}>
+              <Avatar name='Ryan Florence' size='sm' src={profilepic} />
+            </Button>
+
+
+            {/* <Button
+              position="relative"
+              borderRadius="full"
+              backgroundColor="blue.500"
+              color="white"
+              _hover={{ backgroundColor: 'blue.600' }}
+            >
+              <Box as="span" position="absolute" top="-5px" right="-5px">
+                <Badge
+                  borderRadius="full"
+                  px="2"
+                  colorScheme="red"
+                >
+                  {1}
+                </Badge>
+              </Box>
+              Notification Button
+            </Button> */}
+
+
+
+
+          </Flex>
+        </Flex>
+      </Box>
+    </>
+  )
 }
