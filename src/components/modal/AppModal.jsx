@@ -29,7 +29,7 @@ export default function AppModal({isOpen, onOpen, onClose}) {
               <Box mb="10px">
                 <Flex>
                   <Avtar/>
-                  <Box ml="10px" pt="10px"><Text fontWeight={"bold"}>Krishna Sarkar</Text></Box>
+                  <Box ml="10px" pt="10px"><Text fontWeight={"bold"}>Krishna Sarkar </Text></Box>
                 </Flex>
               </Box>
               <Textarea placeholder="What's on your mind?" border={"none"} />
