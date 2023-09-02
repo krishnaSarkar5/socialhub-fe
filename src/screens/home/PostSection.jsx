@@ -4,27 +4,18 @@ import Navbar from "../../components/nav/Navbar";
 import NewPost from "../../components/post/NewPost";
 import { Box, Flex, HStack } from "@chakra-ui/react";
 import OnlineFriendList from "../../components/friends/OnlineFriendList";
-import PostSection from "./PostSection";
-import Body from "./Body";
+import { hideScrollBar } from "../../utils/CssUtils";
 
-const Home = () => {
+const PostSection = () => {
   return (
-    <>
-      <Navbar />
-      <Body/>
-      {/* <Flex>
-        <Box w="80%">
+        <Box w="60%"  height={"760px"} overflowY={"scroll"} style={{scrollbarWidth:"100px"}} css={hideScrollBar}>
           <NewPost />
           <PostView />
           <PostView />
           <PostView />
         </Box>
-        <Box>
-          <OnlineFriendList/>
-        </Box>
-      </Flex> */}
-    </>
-  );
-};
+        
+  )
+}
 
-export default Home;
+export default PostSection

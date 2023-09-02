@@ -29,7 +29,7 @@ const NewPost = () => {
     return (
         <>
         <AppModal isOpen={isOpen} onOpen={onOpen} onClose={onClose}/>
-            <Card w="50%" mt={"5%"} ml={"20%"}>
+            <Card mt="10px" >
                 <CardBody>
                     <Stack divider={<StackDivider />} spacing='4'>
                         <Box>
